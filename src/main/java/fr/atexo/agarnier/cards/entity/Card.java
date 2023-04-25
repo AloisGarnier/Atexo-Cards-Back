@@ -11,7 +11,7 @@ public class Card {
     private final Value value;
     private final Suit suit;
     /**
-     * Represent the card priority, in order to sort a hand or a deck
+     * Represents the card priority, in order to sort a hand or a deck
      */
     private final int priority;
 
