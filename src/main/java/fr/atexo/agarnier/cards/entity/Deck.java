@@ -43,11 +43,28 @@ public class Deck {
      * @param cardNumber number of cards to draw.
      * @return the drawn card.
      */
-    public List<Card> draw(int cardNumber) {
-        return null;
+    public List<Card> drawCards(int cardNumber) {
+
+        List<Card> drawnCards = new ArrayList<>();
+        for(int i = 0; i < cardNumber ; i++) {
+            if (cards.size() > 0) {
+                drawnCards.add(cards.get(0));
+                cards.remove(0);
+            } else {
+                break;
+            }
+        }
+
+        return drawnCards;
     }
 
+    /// Getter ///
     public List<Card> getCards() {
         return cards;
+    }
+
+    /// Setter ///
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
     }
 }

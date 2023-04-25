@@ -6,6 +6,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -35,6 +38,17 @@ public class DeckTest {
         Card card = deck.getCards().get(22);
         deck.shuffle();
         assertTrue(deck.getCards().contains(card));
+    }
+
+    @Test
+    public void drawCards() {
+        Card firstCard = deck.getCards().get(0);
+        Card secondCard = deck.getCards().get(1);
+        List<Card> cards = new ArrayList<>();
+        cards.add(firstCard);
+        cards.add(secondCard);
+
+        assertEquals(cards, deck.drawCards(2));
     }
 
 }
