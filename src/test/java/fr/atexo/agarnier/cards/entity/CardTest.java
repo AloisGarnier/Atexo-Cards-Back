@@ -21,4 +21,9 @@ public class CardTest {
     public void clean() throws Exception {
         card = null;
     }
+
+    @Test
+    public void getPriority() {
+        assertEquals(Value.QUEEN.getPriority() + Suit.HEARTS.getPriority() * 13, card.getPriority());
+    }
 }

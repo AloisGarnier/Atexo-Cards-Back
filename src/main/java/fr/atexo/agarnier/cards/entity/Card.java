@@ -8,16 +8,27 @@ import fr.atexo.agarnier.cards.entity.enums.Value;
  */
 public class Card {
 
-    private Value value;
-    private Suit suit;
+    private final Value value;
+    private final Suit suit;
     /**
      * Represent the card priority, in order to sort a hand or a deck
      */
-    private int priority;
+    private final int priority;
 
     public Card(Value value, Suit suit) {
         this.value = value;
         this.suit = suit;
-        this.priority = 13 * suit.getPriority() + value.getPriority();
+        this.priority = 13 * (suit.getPriority()-1) + value.getPriority();
+    }
+
+    /// Getters ///
+    public Value getValue() {
+        return value;
+    }
+    public Suit getSuit() {
+        return suit;
+    }
+    public int getPriority() {
+        return priority;
     }
 }
